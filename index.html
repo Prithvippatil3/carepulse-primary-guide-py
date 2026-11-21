@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CarePulse provides general primary-care and first-step health guidance.">
+  <title>CarePulse — Primary Treatment Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="particle-field" id="particles"></div>
+  <header class="nav">
+    <a class="brand" href="#"><span class="cross">✚</span> CarePulse</a>
+    <nav>
+      <a href="#medicine">Medicine guide</a><a href="#how">How it works</a><a href="#safety">Safety</a><a href="#help">Help</a>
+    </nav>
+    <a class="ask" href="#medicine">Ask now</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">PATIENT PRIMARY TREATMENT GUIDE</p>
+        <h1>Describe your<br>problem. Get safe<br>first-step guidance.</h1>
+        <p class="hero-copy">Search common symptoms and receive primary treatment suggestions, medicine categories, home-care steps, and warning signs that need urgent medical attention.</p>
+        <div class="actions"><a class="btn light" href="#medicine">Start symptom check</a><a class="btn dark" href="#how">Change pulse</a></div>
+      </div>
+      <div class="pulse-card"><small>CURRENT MODE</small><strong>Care</strong><p>CarePulse primary guide</p><div class="pulse-dots"><i></i><i></i><i></i><i></i><i></i></div><small>General guidance · Safety first</small></div>
+      <div class="scroll-cue">↓</div>
+    </section>
+
+    <section class="section medicine" id="medicine">
+      <p class="eyebrow">MEDICINE GUIDANCE</p>
+      <h2>Tell us your symptom or<br>choose a common problem.</h2>
+      <div class="checker">
+        <form id="symptomForm" class="input-card">
+          <label for="symptoms">What problem are you facing?</label>
+          <textarea id="symptoms" name="symptoms" maxlength="1000" placeholder="Example: fever and body pain, acidity, cough, headache, loose motion"></textarea>
+          <div class="chips">
+            {% for key in guides %}
+              <button type="button" class="chip" data-value="{{ key }}">{{ guides[key].title }}</button>
+            {% endfor %}
+          </div>
+          <button class="btn light submit" type="submit">Get primary treatment</button>
+          <p class="tiny">For general education only. Not a diagnosis.</p>
+        </form>
+        <div class="result-card" id="result" aria-live="polite">
+          <p class="eyebrow">READY</p><h3>Enter a symptom to<br>see first-step care.</h3>
+          <p>This guide gives general primary treatment information for adults. For children, pregnancy, allergies, chronic disease, or severe symptoms, speak with a doctor first.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="how" id="how">
+      <div><p class="eyebrow">HOW IT WORKS</p><h2>Simple<br>guidance before<br>the clinic visit.</h2></div>
+      <div class="steps"><span>Identify symptom</span><span>Check warning signs</span><span>Review safe medicine options</span><span>Follow home care</span><span>Know when to see a doctor</span><span>Save notes for consultation</span></div>
+    </section>
+
+    <section class="section safety" id="safety">
+      <div><p class="eyebrow muted">SAFETY FIRST</p><h2>Medicine advice must<br>stay careful and<br>condition-aware.</h2>
+      <p>The guide avoids strong prescriptions. It suggests common primary-care options, reminds patients to check allergies and existing conditions, and highlights red flags before any medicine recommendation.</p></div>
+      <div class="safety-list"><div>Do not exceed label dosage</div><div>Avoid duplicate ingredients</div><div>Seek urgent care for red flags</div></div>
+    </section>
+
+    <section class="section help" id="help">
+      <p class="eyebrow">NEED HELP?</p><h2>When in doubt, speak to a healthcare professional.</h2>
+      <p>If symptoms are severe, sudden or getting worse, do not rely on an online guide. In India, call 112 for emergency assistance.</p>
+    </section>
+  </main>
+  <footer>© 2026 CarePulse · Primary Treatment Guide <span>Educational use only · Not a substitute for medical care</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
